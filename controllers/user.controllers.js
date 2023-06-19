@@ -10,14 +10,14 @@ export const setUser = async (req, res) => {
   const { email, password } = req.body;
 
   const [result] = await pool.query(
-    "INSERT INTO usuario(email,password) VALUES(?,?)",
-    [email, password]
-  );
+    // "INSERT INTO usuario(email,password) VALUES(?,?)",
+    "CALL AGREGAR_USUARIO (?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+    [null, correo, nombre, apellidoPat, apellidoMat, informacion, telefono, contraseña, fechaNacimiento]);
+    // [email, password]
+  // );
   console.log(result);
   res.json({
     Id: result.insertId,
-    email,
-    password,
   });
   // res.send("Creando Usuario")
 };
