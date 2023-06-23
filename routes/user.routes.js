@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getUsers, setUser } from "../controllers/user.controllers.js";
+import { getUsers, setUser, getUser } from "../controllers/user.controllers.js";
 import jwt from "jsonwebtoken";
 
 const router = Router();
@@ -23,6 +23,7 @@ const router = Router();
 //   }
 
 router.get("/users", getUsers);
+router.get("/users/:correo", getUser);
 router.post("/setuser", setUser);
 
 export default router;

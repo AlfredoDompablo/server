@@ -24,4 +24,4 @@ app.use(userRoutes);
     console.log("Servidor en el puerto " + PORT + " con HTTPS habilitado");
   });
 //app.listen(PORT);
-console.log('Servidor en el puerto ' + PORT);
+//console.log('Servidor en el puerto ' + PORT);
